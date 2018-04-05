@@ -40,11 +40,12 @@ Word.prototype.checkGuess = function(guess) {
         var letter = new Letter(this.answerArray[i]);
         letter.compareToGuess(guess);
     }
+    // console.log(Letter.showArray)
 }
 
 // Testing
-var word = new Word('apple');
-word.checkGuess('a');
+// var word = new Word('apple');
+// word.checkGuess('a');
 // word.toString();
 
 
