@@ -5,9 +5,14 @@ var Letter = require('./letter');
 var Word = function(word) {
 
     this.word = word;
-
+    // console.log('Word is ' + word);
+    
     // An array of `new` Letter objects representing the letters of the underlying word
-    this.answerArray = ['a', 'p', 'p', 'l', 'e'];
+    this.answerArray = word.split('');
+
+    // for(var i=0; i<this.answerArray.length; i++) {
+    //     var letter = new Letter(this.answerArray[i]);
+    // }
 
 }
 
@@ -19,25 +24,30 @@ Word.prototype.toString = function() {
         var letter = new Letter(this.answerArray[i]);
         display += letter.print();
     }
-    return display;
-    console.log('Testing');
+    // return display;
+    // console.log('Testing');
 
 }
 
 // var letter = new Letter('apple');
 // letter.print();
 
-var word = new Word();
-word.toString();
-
 //   * A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in `Letter.js`)
 
-// Work.prototype.checkGuess = function(guess) {
+Word.prototype.checkGuess = function(guess) {
 
-//     for(var i=0; i<this.answerArray.length; i++) {
-//         this.answerArray[i].compareToGuess(guess);
-//     }
-// }
+    for(var i=0; i<this.answerArray.length; i++) {
+        var letter = new Letter(this.answerArray[i]);
+        letter.compareToGuess(guess);
+    }
+}
+
+// Testing
+var word = new Word('apple');
+word.checkGuess('a');
+// word.toString();
+
+
 
 module.exports = Word;
 
