@@ -37,10 +37,10 @@ module.exports = Letter;
 
 
 // Testing
-var a = new Letter('b');
-a.compareToGuess('a');
-a.print();
+// var a = new Letter('b');
+// a.compareToGuess('a');
+// a.print();
 
-var b = new Letter('b');
-b.compareToGuess('b');
-b.print();
+// var b = new Letter('b');
+// b.compareToGuess('b');
+// b.print();
