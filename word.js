@@ -49,7 +49,7 @@ Word.prototype.isComplete = function() {
 // var word = new Word('apple');
 // word.checkGuess('a');
 // word.checkGuess('p');
-//word.toString();
+// word.toString();
 
 module.exports = Word;
 

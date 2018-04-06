@@ -9,6 +9,7 @@ var word = new Word(words[Math.floor(Math.random() * words.length)]);
 console.log(word);
 console.log('\n');
 
+// Test:
 // word.checkGuess('a');
 
 // Prompts the user for each guess and keeps track of the user's remaining guesses
@@ -31,7 +32,16 @@ var getUserInput = function() {
                 console.log('You win!!\n\n');
                 return;
             }
-            console.log('You have ' + count + ' guesses remaining.\n');
+            if (count > 1) {
+                console.log('You have ' + count + ' guesses remaining.');
+            }
+            if (count === 1) {
+                console.log('You have 1 guess remaining.');
+            }
+            if (count < 1) {
+                console.log('You are out of guesses. Better luck next time!\n');
+                return;
+            }
             count--;
             getUserInput();
         })

@@ -25,16 +25,8 @@ Letter.prototype.compareToGuess = function(guess) {
     if (guess == this.correctLetter) {
         // console.log('Guess "' + guess + '" is correct');
         this.show = true;
-        // this.print();
-        // console.log('this.correctLetter');
-    }
-    else {
-        // console.log('Guess "' + guess + '" is incorrect');
-        // console.log('_');
     }
 }
-
-Letter.prototype.show
 
 module.exports = Letter;
 
