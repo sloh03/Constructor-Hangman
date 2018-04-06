@@ -23,20 +23,26 @@ Word.prototype.toString = function() {
         display += this.answerArray[i].print() + ' ';
     }
     console.log('\n' + display + '\n\n');
-    // return display;
-    // console.log('Testing');
 
 }
 
 //   * A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in `Letter.js`)
-
 Word.prototype.checkGuess = function(guess) {
 
     for(var i=0; i<this.answerArray.length; i++) {
-        this.answerArray[i].compareToGuess(guess.toUpperCase());
+        var guessUpper = guess.toUpperCase();
+        this.answerArray[i].compareToGuess(guessUpper);
     }
 
     this.toString();
+}
+
+// If showing answerArray.length of letters, word is complete
+Word.prototype.isComplete = function() {
+    for (var i=0; i < this.answerArray.length; i++) {
+        if(!this.answerArray[i].show) return false;
+    }
+    return true;
 }
 
 // Testing

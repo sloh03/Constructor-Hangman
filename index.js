@@ -13,7 +13,8 @@ console.log('\n');
 
 // Prompts the user for each guess and keeps track of the user's remaining guesses
 count = 14;
-console.log('You have 15 guesses remaining.\n');
+console.log('You have 15 guesses remaining.');
+word.checkGuess('');
 
 var getUserInput = function() {
 
@@ -22,9 +23,14 @@ var getUserInput = function() {
             {
                 name: 'letter',
                 message: 'Guess a letter!'
+                // Validate user guess here
             }
         ]).then(function(input) {
             word.checkGuess(input.letter);
+            if(word.isComplete()) {
+                console.log('You win!!\n\n');
+                return;
+            }
             console.log('You have ' + count + ' guesses remaining.\n');
             count--;
             getUserInput();
