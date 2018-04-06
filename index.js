@@ -6,7 +6,7 @@ var words = ['CATERPILLAR', 'BUMBLEBEE', 'BUTTERFLY', 'DRAGONFLY', 'COCKROACH', 
 
 // Randomly selects a word and uses the Word constructor to store it
 var word = new Word(words[Math.floor(Math.random() * words.length)]);
-// console.log(word);
+console.log(word);
 
 // word.checkGuess('a');
 
