@@ -8,9 +8,6 @@ var Letter = function(correctLetter) {
 
     //   * A boolean value that stores whether that letter has been guessed yet
     this.show = false;
-
-    // this.showArray = [];
-
 }
 
 //   * A function that returns the underlying character if the letter has been guessed, or a placeholder (like an underscore) if the letter has not been guessed
@@ -25,19 +22,15 @@ Letter.prototype.print = function() {
 
 //   * A function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
 Letter.prototype.compareToGuess = function(guess) {
-    if (guess === this.correctLetter) {
+    if (guess == this.correctLetter) {
         // console.log('Guess "' + guess + '" is correct');
         this.show = true;
-        console.log('CORRECT!');
         // this.print();
         // console.log('this.correctLetter');
-        // this.showArray.push(this.correctLetter);
     }
     else {
-        console.log('INCORRECT');
         // console.log('Guess "' + guess + '" is incorrect');
         // console.log('_');
-        // this.showArray.push('_');
     }
 }
 

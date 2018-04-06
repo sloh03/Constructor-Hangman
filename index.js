@@ -7,16 +7,17 @@ var words = ['CATERPILLAR', 'BUMBLEBEE', 'BUTTERFLY', 'DRAGONFLY', 'COCKROACH', 
 // Randomly selects a word and uses the Word constructor to store it
 var word = new Word(words[Math.floor(Math.random() * words.length)]);
 console.log(word);
+console.log('\n');
 
 // word.checkGuess('a');
 
 // Prompts the user for each guess and keeps track of the user's remaining guesses
-count = 0;
+count = 14;
+console.log('You have 15 guesses remaining.\n');
 
 var getUserInput = function() {
 
-    if (count < 15) {
-
+    if (count > -1) {
         inquirer.prompt([
             {
                 name: 'letter',
@@ -24,12 +25,11 @@ var getUserInput = function() {
             }
         ]).then(function(input) {
             word.checkGuess(input.letter);
-            count++;
+            console.log('You have ' + count + ' guesses remaining.\n');
+            count--;
             getUserInput();
         })
     }
-
-
 }
 
 getUserInput();
