@@ -23,7 +23,18 @@ var getUserInput = function() {
         inquirer.prompt([
             {
                 name: 'letter',
-                message: 'Guess a letter!'
+                message: 'Guess a letter!',
+                validate: function (name) {
+                    var t = /^[a-zA-Z_\- ]{0,1}$/;
+                    return t.test(name);
+                }
+                // https://www.sencha.com/forum/showthread.php?83434-regex-no-spaces-and-letters-only
+                
+                // function validateLetter(str){
+                //     return str !== '';
+                //     var regEx = new RegExp("/^[a-zA-Z]+$/");
+                //     return regEx.test(str);
+                // }
                 // Validate user guess here
             }
         ]).then(function(input) {
