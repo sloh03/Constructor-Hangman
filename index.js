@@ -2,12 +2,16 @@
 var inquirer = require('inquirer');
 var Word = require('./word');
 
-var words = ['CATERPILLAR', 'BUMBLEBEE', 'BUTTERFLY', 'DRAGONFLY', 'COCKROACH', 'GRASSHOPPER'];
+var words = ['CATERPILLAR', 'BUMBLEBEE', 'BUTTERFLY', 'DRAGONFLY', 'COCKROACH', 'GRASSHOPPER', 'CRICKET'];
+
+var alreadyGuessed = [];
 
 // Randomly selects a word and uses the Word constructor to store it
 var word = new Word(words[Math.floor(Math.random() * words.length)]);
-console.log(word);
-console.log('\n');
+
+// Test: 
+// console.log(word);
+// console.log('\n');
 
 // Test:
 // word.checkGuess('a');
@@ -24,36 +28,46 @@ var getUserInput = function() {
             {
                 name: 'letter',
                 message: 'Guess a letter!',
-                validate: function (name) {
-                    var t = /^[a-zA-Z_\- ]{0,1}$/;
+                validate: 
+                function (name) {
+                    // Allow upper or lower case letters, no spaces, and min/max of 1 character
+                    var t = /^[a-zA-Zs]{1,1}$/;
                     return t.test(name);
-                }
-                // https://www.sencha.com/forum/showthread.php?83434-regex-no-spaces-and-letters-only
-                
-                // function validateLetter(str){
-                //     return str !== '';
-                //     var regEx = new RegExp("/^[a-zA-Z]+$/");
-                //     return regEx.test(str);
-                // }
-                // Validate user guess here
+
+                } // https://www.sencha.com/forum/showthread.php?83434-regex-no-spaces-and-letters-only
             }
         ]).then(function(input) {
-            word.checkGuess(input.letter);
-            if(word.isComplete()) {
-                console.log('You win!!\n\n');
-                return;
+
+            var guessUpper = input.letter.toUpperCase();
+
+            if (alreadyGuessed.indexOf(guessUpper) != -1) {
+                console.log('You already guess the letter ' + guessUpper + '. Guess again.\n');
             }
-            if (count > 1) {
-                console.log('You have ' + count + ' guesses remaining.');
+            else {
+
+                word.checkGuess(guessUpper);
+
+                if(word.isComplete()) {
+                    console.log('Congratulations, you win!!\n\n');
+                    return;
+                }
+                if (count > 1) {
+                    console.log('You have ' + count + ' guesses remaining.');
+                }
+                if (count === 1) {
+                    console.log('You have 1 guess remaining.');
+                }
+                if (count < 1) {
+                    console.log('You are out of guesses. Better luck next time!\n');
+                    return;
+                }
+
+                count--;
             }
-            if (count === 1) {
-                console.log('You have 1 guess remaining.');
-            }
-            if (count < 1) {
-                console.log('You are out of guesses. Better luck next time!\n');
-                return;
-            }
-            count--;
+
+            alreadyGuessed.push(guessUpper);
+            // console.log('already guessed: ' + alreadyGuessed.toString());
+
             getUserInput();
         })
     }

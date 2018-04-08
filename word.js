@@ -30,11 +30,11 @@ Word.prototype.toString = function() {
 Word.prototype.checkGuess = function(guess) {
 
     for(var i=0; i<this.answerArray.length; i++) {
-        var guessUpper = guess.toUpperCase();
-        this.answerArray[i].compareToGuess(guessUpper);
+        this.answerArray[i].compareToGuess(guess);
     }
 
     this.toString();
+
 }
 
 // If showing answerArray.length of letters, word is complete
