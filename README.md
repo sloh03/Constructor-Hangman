@@ -32,19 +32,19 @@ The game is created using 3 main files, **letter.js**, **word.js**, and **index.
     * A string value that stores the current word
     * An array that represents the letters of the word
     * An array of `new` Letter objects representing the letters of the underlying word and whether they have been guessed
-    * A function that returns a string representing the word. This calls the function on each letter object (the first function defined in `Letter.js`) that displays the character or an underscore and concatenates those together
-    * A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in `Letter.js`)
+    * A function that returns a string representing the word. This calls the function on each letter object (the first function defined in `letter.js`) that displays the character or an underscore and concatenates those together
+    * A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in `letter.js`)
     * A function that takes a character as an argument and checks if it exists in the array of correct letters
     * A function checks if the word is complete by comparing the amount of letters showing to the length of the answer array
     
 ### 3. index.js
-* Contains the logic for the course of the game, which depends on `Word.js`
+* Contains the logic for the course of the game, which depends on `word.js`
 * Randomly selects a word and uses the Word constructor to store it
 * Prompts the user for each guess using a recursive call and the `inquirer` npm package, and validates the guess as 1 alphabet character
 * Keeps track of duplicate guesses
 * Keeps track of correct and incorrect guesses
 * Keeps track of the user's remaining guesses and updates the player
-* Calls the fourth function in Word.js to check for a win
+* Calls the fourth function in `word.js` to check for a win
     
 ## Bonus Feature
 The `colors` npm package is used to style text in the command window. 'Cyan' is used to notify the player of correct guesses and wins, and 'magenta' is used to notify a player of incorrect or duplicate guesses, as well as a loss.
