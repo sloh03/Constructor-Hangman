@@ -12,7 +12,7 @@ The player is prompted to 'Guess a letter!' and if the guess is correct, the let
 ![Alt text](images/Gameplay.png?raw=true "StartGame")
 
 ## Design
-The game is created using 3 main files, **letter.js**, **word.js**, and **index.js**.
+The game is created using 3 main files --  **letter.js**, **word.js**, and **index.js**.
 
 ### 1. letter.js
 * Contains a constructor, Letter. This constructor displays an underlying character or a blank placeholder (such as an underscore), depending on whether or not the user has guessed the letter.

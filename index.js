@@ -15,6 +15,7 @@ var word = new Word(words[Math.floor(Math.random() * words.length)]);
 
 // Prompts the player for each guess and keeps track of the user's remaining guesses
 count = 14;
+console.log('\nWelcome to hangman! The category is insects.'.cyan);
 console.log('\nYou have 15 guesses remaining.');
 word.checkGuess('');
 
