@@ -16,7 +16,9 @@ The game is created using 3 main files, **letter.js**, **word.js**, and **index.
 
 ### 1. letter.js
 * Contains a constructor, Letter. This constructor displays an underlying character or a blank placeholder (such as an underscore), depending on whether or not the user has guessed the letter.
+
 * The constructor defines:
+
     * A string value that stores the underlying character for the letter
     * A boolean value that stores whether that letter has been guessed yet
     * A function that returns the underlying character if the letter has been guessed, or a placeholder (like an underscore) if the letter has not been guessed
@@ -33,24 +35,24 @@ The game is created using 3 main files, **letter.js**, **word.js**, and **index.
     * A function that takes a character as an argument and checks if it exists in the array of correct letters
     * A function checks if the word is complete by comparing the amount of letters showing to the length of the answer array
     
-    ### 3. index.js
-    * Contains the logic for the course of the game, which depends on `Word.js`
-    * Randomly selects a word and uses the Word constructor to store it
-    * Prompts the user for each guess using a recursive call and the `inquirer` npm package, and validates the guess as 1 alphabet character
-    * Keeps track of duplicate guesses
-    * Keeps track of correct and incorrect guesses
-    * Keeps track of the user's remaining guesses and updates the player
-    * Calls the fourth function in Word.js to check for a win
+### 3. index.js
+* Contains the logic for the course of the game, which depends on `Word.js`
+* Randomly selects a word and uses the Word constructor to store it
+* Prompts the user for each guess using a recursive call and the `inquirer` npm package, and validates the guess as 1 alphabet character
+* Keeps track of duplicate guesses
+* Keeps track of correct and incorrect guesses
+* Keeps track of the user's remaining guesses and updates the player
+* Calls the fourth function in Word.js to check for a win
     
-    ## Bonus Feature
-    The `colors` npm package is used to style text in the command window. 'Cyan' is used to notify the player of correct guesses and wins, and 'magenta' is used to notify a player of incorrect or duplicate guesses, as well as a loss.
+## Bonus Feature
+The `colors` npm package is used to style text in the command window. 'Cyan' is used to notify the player of correct guesses and wins, and 'magenta' is used to notify a player of incorrect or duplicate guesses, as well as a loss.
     
-    ## Languages and Libraries Used
-    * Node.js
+## Languages and Libraries Used
+* Node.js
     
-    ## Materials Sources
-    * [Inquirer npm package](https://www.npmjs.com/package/inquirer)
-    * [Colors npm package](https://www.npmjs.com/package/colors)
+## Materials Sources
+* [Inquirer npm package](https://www.npmjs.com/package/inquirer)
+* [Colors npm package](https://www.npmjs.com/package/colors)
     
     
     
