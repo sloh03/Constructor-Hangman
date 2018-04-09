@@ -9,7 +9,7 @@ Underscores represent the letters of the hidden word. The player has 15 guesses 
 
 The player is prompted to 'Guess a letter!' and if the guess is correct, the letter replaces corresponding underscores. The player is also notified if their guess was 'Correct!' or 'Incorrect!'. If the letter has already been guessed before, it will not use up a remaining guess and the player will be notified to guess again.
 
-![Alt text](images/Gameplay.png.png?raw=true "StartGame")
+![Alt text](images/Gameplay.png?raw=true "StartGame")
 
 ## Design
 The game is created using 3 main files, **letter.js**, **word.js**, and **index.js**.
