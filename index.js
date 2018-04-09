@@ -3,6 +3,7 @@
 
 var Word = require('./word');
 var inquirer = require('inquirer');
+var colors = require('colors');
 
 var words = ['CATERPILLAR', 'BUMBLEBEE', 'BUTTERFLY', 'DRAGONFLY', 'COCKROACH', 'GRASSHOPPER', 'CRICKET'];
 
@@ -38,7 +39,7 @@ var getUserInput = function() {
 
             // Returns an error message to player if a duplicate letter is entered
             if (alreadyGuessed.indexOf(guessUpper) != -1) {
-                console.log('You already guess the letter ' + guessUpper + '. Guess again.\n');
+                console.log("You already guess the letter '".magenta + guessUpper.magenta + "'. Try again.\n".magenta);
             }
             else {
                 // Calls the second function in Word.js to check if guess is correct and display letters/spaces accordingly
@@ -46,27 +47,27 @@ var getUserInput = function() {
 
                 // Calls the third function in Word.js to check if guess is correct and informs the user
                 if (word.hasCorrectGuess(guessUpper)) {
-                    console.log('Correct!\n\n');
+                    console.log('Correct!\n\n'.cyan);
                 }
                 else if (!word.hasCorrectGuess(guessUpper)) {
-                    console.log('Incorrect!\n\n');
+                    console.log('Incorrect!\n\n'.magenta);
                 }
 
                 // Calls the fourth function in Word.js to check for a win
                 if (word.isComplete()) {
-                    console.log('Congratulations, you win!!\n\n');
+                    console.log('Congratulations, you win!!\n\n'.cyan);
                     return;
                 }
 
                 // Checks the amount guesses remaining and updates the player
                 if (count > 1) {
-                    console.log('You have ' + count + ' guesses remaining.');
+                    console.log('You have ' + count + ' guesses remaining.\n');
                 }
                 if (count === 1) {
                     console.log('You have 1 guess remaining.');
                 }
                 if (count < 1) {
-                    console.log('You are out of guesses. Better luck next time!\n');
+                    console.log('You are out of guesses. Better luck next time!\n'.magenta);
                     return;
                 }
 

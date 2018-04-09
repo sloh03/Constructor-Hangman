@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/sloh03/Constructor-Hangman#readme",
   "dependencies": {
+    "colors": "^1.2.1",
     "inquirer": "^5.2.0"
   }
 }
