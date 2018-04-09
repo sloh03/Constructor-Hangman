@@ -26,7 +26,9 @@ The game is created using 3 main files, **letter.js**, **word.js**, and **index.
 
 ### 2. word.js
 * Contains a constructor, Word that depends on the Letter constructor. This is used to create an object representing the current word the user is attempting to guess.
+
 * The constructor defines:
+
     * A string value that stores the current word
     * An array that represents the letters of the word
     * An array of `new` Letter objects representing the letters of the underlying word and whether they have been guessed
