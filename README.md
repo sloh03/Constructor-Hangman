@@ -9,19 +9,19 @@ Underscores represent the letters of the hidden word. The player has 15 guesses 
 
 The player is prompted to 'Guess a letter!' and if the guess is correct, the letter replaces corresponding underscores. The player is also notified if their guess was 'Correct!' or 'Incorrect!'. If the letter has already been guessed before, it will not use up a remaining guess and the player will be notified to guess again.
 
-![Alt text](images/Gameplay.png?raw=true "StartGame")
+![Alt text](images/Gameplay2.jpg?raw=true "StartGame")
 
 ## Design
 The game is created using 3 main files --  **letter.js**, **word.js**, and **index.js**.
 
 ### 1. letter.js
-* Contains a constructor, Letter. This constructor displays an underlying character or a blank placeholder (such as an underscore), depending on whether or not the user has guessed the letter.
+* Contains a constructor, Letter. This constructor displays an underlying character or a blank placeholder (an underscore), depending on whether or not the user has guessed the letter.
 
 * The constructor defines:
 
     * A string value that stores the underlying character for the letter
     * A boolean value that stores whether that letter has been guessed yet
-    * A function that returns the underlying character if the letter has been guessed, or a placeholder (like an underscore) if the letter has not been guessed
+    * A function that returns the underlying character if the letter has been guessed, or a placeholder (an underscore) if the letter has not been guessed
     * A function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
 
 ### 2. word.js
@@ -35,7 +35,7 @@ The game is created using 3 main files --  **letter.js**, **word.js**, and **ind
     * A function that returns a string representing the word. This calls the function on each letter object (the first function defined in `letter.js`) that displays the character or an underscore and concatenates those together
     * A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in `letter.js`)
     * A function that takes a character as an argument and checks if it exists in the array of correct letters
-    * A function checks if the word is complete by comparing the amount of letters showing to the length of the answer array
+    * A function that checks if the word is complete by comparing the amount of letters showing to the length of the answer array
     
 ### 3. index.js
 * Contains the logic for the course of the game, which depends on `word.js`
