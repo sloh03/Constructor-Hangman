@@ -1,8 +1,8 @@
-# Constructor-Hangman
+# Constructor Hangman
 
 This is a command-line game created using constructor functions.
 
-## Gameplay
+## The Game
 The theme of the game is insects. A player can start the game by entering `node index.js` into the command line.
 
 Underscores represent the letters of the hidden word. The player has 15 guesses to try to reveal the hidden word and the number of remaining guesses are displayed after each guess.
@@ -12,9 +12,9 @@ The player is prompted to 'Guess a letter!' and if the guess is correct, the let
 ![Alt text](images/Gameplay2.jpg?raw=true "StartGame")
 
 ## Design
-The game is created using 3 main files --  **letter.js**, **word.js**, and **index.js**.
+The game is created using 3 main files --  `letter.js`, `word.js`, and `index.js`.
 
-### 1. letter.js
+### 1. `letter.js`
 * Contains a constructor, Letter. This constructor displays an underlying character or a blank placeholder (an underscore), depending on whether or not the user has guessed the letter.
 
 * The constructor defines:
@@ -24,7 +24,7 @@ The game is created using 3 main files --  **letter.js**, **word.js**, and **ind
     * A function that returns the underlying character if the letter has been guessed, or a placeholder (an underscore) if the letter has not been guessed
     * A function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
 
-### 2. word.js
+### 2. `word.js`
 * Contains a constructor, Word that depends on the Letter constructor. This is used to create an object representing the current word the user is attempting to guess.
 
 * The constructor defines:
@@ -37,7 +37,7 @@ The game is created using 3 main files --  **letter.js**, **word.js**, and **ind
     * A function that takes a character as an argument and checks if it exists in the array of correct letters
     * A function that checks if the word is complete by comparing the amount of letters showing to the length of the answer array
     
-### 3. index.js
+### 3. `index.js`
 * Contains the logic for the course of the game, which depends on `word.js`
 * Randomly selects a word and uses the Word constructor to store it
 * Prompts the user for each guess using a recursive call and the `inquirer` npm package, and validates the guess as 1 alphabet character
