@@ -3,7 +3,7 @@
 This is a command-line game created using constructor functions.
 
 ## The Game
-The theme of the game is insects. A player can start the game by entering `node index.js` into the command line.
+The theme of the game is *insects*. A player can start the game by entering `node index.js` into the command line.
 
 Underscores represent the letters of the hidden word. The player has 15 guesses to try to reveal the hidden word and the number of remaining guesses are displayed after each guess.
 
